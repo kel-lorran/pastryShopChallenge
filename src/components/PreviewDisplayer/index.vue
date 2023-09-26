@@ -36,8 +36,8 @@ export default defineComponent({
     computed: {
         illustration() {
             const { imgSrc, type } = this.$props.product
-            const defaultSrcBeverage = '/suco-img.png'
-            const defaultSrcFood = '/pastel-img.png'
+            const defaultSrcBeverage = './suco-img.png'
+            const defaultSrcFood = './pastel-img.png'
             return {
                 src: imgSrc || (type === 'comida' ? defaultSrcFood : defaultSrcBeverage),
                 alt: `ilustracao de ${type}`

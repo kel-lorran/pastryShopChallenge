@@ -35,7 +35,7 @@ export default {
     },
     methods: {
         addProduct(event: ProductModel) {
-            this.$data.productList = [...this.$data.productList, event];
+            this.$data.productList = [event, ...this.$data.productList ];
         },
         removeProduct(index: number) {
             const tempProductList = [...this.$data.productList]

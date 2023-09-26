@@ -27,7 +27,7 @@
         <div class="control-container">
 
             <button class="cancel-button" @click.prevent="clearForm">limpar</button>
-            <button class="submit-button" type="submit">cadastrar</button>
+            <button class="submit-button" :disabled="desableSubmit" type="submit">cadastrar</button>
         </div>
     </form>
 </template>
@@ -52,6 +52,12 @@ export default {
     },
     components: {
         Switches
+    },
+    computed: {
+        desableSubmit() {
+            const { title, flavor, price } = this.$data
+            return !(title && flavor && price)
+        }
     },
     methods: {
         changeType() {
@@ -188,6 +194,16 @@ export default {
         font-weight: bold;
         & + button {
             margin-left: 34px;
+        }
+        &[disabled] {
+            filter: grayscale(0.8);
+            cursor: no-drop;
+        }
+        &:hover {
+            opacity: 0.95;
+        }
+        &:active {
+            opacity: 0.7;
         }
     }
     .control-container {

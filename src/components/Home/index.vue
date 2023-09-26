@@ -143,6 +143,7 @@ h3 {
         top: 0.5em;
         font-size: 24px;
         fill: $colorPreviweTitle;
+        cursor: pointer;
     }
 }
 </style>

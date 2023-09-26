@@ -84,6 +84,7 @@ export default {
                 imgSrc: this.$data.imgSrc,
                 type: this.$data.type,
             })
+            this.clearForm()
         },
         clearForm() {
             Object.assign(this.$data, initialParcialData);
